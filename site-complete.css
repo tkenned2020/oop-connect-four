@@ -35,6 +35,7 @@ input {
 input:focus {
   border-bottom: 2px solid orangered;
 }
+
 main {
   display: flex;
   flex-direction: row;
@@ -63,6 +64,7 @@ main {
   flex-direction: column;
   padding: 1em;
 }
+
 #overlay {
   background-image: url(./images/connect-four.png);
   background-size: cover;
@@ -110,6 +112,7 @@ main {
 .black .click-target:hover {
   background-color: black;
 }
+
 .full.click-target {
   border: 1px solid white;
 }
