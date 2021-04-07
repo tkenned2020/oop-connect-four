@@ -32,47 +32,48 @@ let columns = document.querySelectorAll();
 // const Player1 = token.red
 // const Player2 = token.black
 
-// import { Game } from "./game.js";
-// new Game;
+import { Game } from "./game.js";
+new Game
+let game;
 
-// let game;
+let blackChip = document.createElement("div");
+blackChip.setAttribute("class", "token black");
 
-// let blackChip = document.createElement("div");
-// blackChip.setAttribute("class", "token black");
+let redChip = document.createElement("div");
+redChip.setAttribute("class", "token red");
 
-// let redChip = document.createElement("div");
-// redChip.setAttribute("class", "token red");
+window.addEventListener("DOMContentLoaded", (event) => {
+    let columns = document.querySelectorAll(".click-target"); //get class from css
+    //should returns a node list
+    let tokens = document.querySelectorAll(".token-square");
+    columns.appendChild(tokens);
 
-// window.addEventListener("DOMContentLoaded", (event) => {
-//   let columns = document.querySelectorAll(".click-target"); //get class from css
-//   //should returns a node list
-//   let tokens = document.querySelectorAll(".token-square");
-//   columns.appendChild(tokens);
+    columns.addEventListener("click", (e) => { });
 
-//   columns.addEventListener("click", (e) => {});
+    columns.forEach((column) => {
+        column = [];
+        if (column.length === 6) {
+            column.setAttribute("class", "click-target full");
+        }
+    });
 
-//   columns.forEach((column) => {
-//     column = [];
-//     if (column.length === 6) {
-//       column.setAttribute("class", "click-target full");
-//     }
-//   });
+    const newGameBtn = document.getElementById("new-game");
+    const player1Name = document.getElementById("player-1-name");
+    const player2Name = document.getElementById("player-2-name");
 
-//   const newGameBtn = document.getElementById("new-game");
+    const updateBtnStatus = () => {
+        const falseStatus = document.getElementById("new-game");
+        // player1Name.textContent = "";
+        if ((player1Name.value !== "") && (player2Name.value !== "")) {
+            falseStatus.disabled = false;
+        } 
+    }
 
-    const players = function() {
-      const player1Name = document.getElementById("player-1-name");
-      const player2Name = document.getElementById("player-2-name");
-  }
-  console.log(players)
+    player1Name.addEventListener("keyup", (event) => {
+        updateBtnStatus()
+    });
 
-//   players.addEventListener("keyup", (event) => {
-//     const falseStatus = (document.getElementById("new-game").disabled = false);
-//     // player1Name.textContent = "";
-//     if ((player1Name.textContent !== "") && (player2Name.textContent !== "")) {
-//       !falseStatus;
-//     } else {
-//       falseStatus;
-//     }
-//   });
-// });
+    player2Name.addEventListener("keyup", (event) => {
+        updateBtnStatus()
+    });
+});
