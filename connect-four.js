@@ -18,14 +18,14 @@ function updateUI() {
     board.classList.remove("is-invisible");
     gameName.innerHTML = game.getName();
   }
-
-  let currentPlayer = playerTracker;
+  const turnSwitch = document.getElementById("click-targets");
+  let currentPlayer = game.playerTracker;
   if (currentPlayer === 1) {
-    turnSwitch.classList.add("red");
-    turnSwitch.classList.remove("black");
-  } else if (currentPlayer === 2) {
-    turnSwitch.classList.remove("red");
     turnSwitch.classList.add("black");
+    turnSwitch.classList.remove("red");
+  } else if (currentPlayer === 2) {
+    turnSwitch.classList.remove("black");
+    turnSwitch.classList.add("red");
   }
 }
 
@@ -36,7 +36,6 @@ window.addEventListener("DOMContentLoaded", (e) => {
 
   // still working on getting the button function to work
   const updateBtnStatus = function () {
-    // const falseStatus = document.getElementById("new-game");
     let player1Content = player1Name.value;
     let player2Content = player2Name.value;
 
@@ -56,35 +55,33 @@ window.addEventListener("DOMContentLoaded", (e) => {
     game = new Game(player1Name.value, player2Name.value);
     player1Name.value = "";
     player2Name.value = "";
-    // this.player1Name = player1Name;
-    // this.player2Name = player2Name;
     updateBtnStatus();
     updateUI();
   });
 
-  const turnSwitch = document.getElementById("click-targets");
+  //   const turnSwitch = document.getElementById("click-targets");
   turnSwitch.addEventListener("click", (e) => {
     game.playInColumn();
     updateUI();
   });
 });
 
-let columns = document.querySelectorAll(".click-target"); //get class from css
-    //should returns a node list
-    let tokens = document.querySelectorAll(".token-square");
-    columns.appendChild(tokens);
+// let columns = document.querySelectorAll(".click-target"); //get class from css
+//     //should returns a node list
+//     let tokens = document.querySelectorAll(".token-square");
+//     columns.appendChild(tokens);
 
-    columns.addEventListener("click", (e) => { });
+//     columns.addEventListener("click", (e) => {});
 
-    columns.forEach((column) => {
-        column = [];
-        if (column.length === 6) {
-            column.setAttribute("class", "click-target full");
-        }
-    });
+//     columns.forEach((column) => {
+//         column = [];
+//         if (column.length === 6) {
+//             column.setAttribute("class", "click-target full");
+//         }
+//     });
 
-let blackChip = document.createElement("div");
-blackChip.setAttribute("class", "token black");
+// let blackChip = document.createElement("div");
+// blackChip.setAttribute("class", "token black");
 
-let redChip = document.createElement("div");
-redChip.setAttribute("class", "token red");
+// let redChip = document.createElement("div");
+// redChip.setAttribute("class", "token red");
