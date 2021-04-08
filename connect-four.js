@@ -24,9 +24,18 @@ function updateUI() {
     turnSwitch.classList.add("black");
     turnSwitch.classList.remove("red");
   } else if (currentPlayer === 2) {
-    turnSwitch.classList.remove("black");
     turnSwitch.classList.add("red");
+    turnSwitch.classList.remove("black");
   }
+  const squareRowCol = document.getElementById("square-row-col")
+  for (let i = 0; i <= 5; i++) {
+      let rowIDX = i
+    for (let j = 0; j <= 6; j++) {
+      let colIDX = j;
+      
+    }
+  }
+
 }
 
 window.addEventListener("DOMContentLoaded", (e) => {
@@ -59,9 +68,14 @@ window.addEventListener("DOMContentLoaded", (e) => {
     updateUI();
   });
 
-  //   const turnSwitch = document.getElementById("click-targets");
+  const turnSwitch = document.getElementById("click-targets");
   turnSwitch.addEventListener("click", (e) => {
-    game.playInColumn();
+    const targetID = event.target.id;
+    if (!targetID.startsWith('column-')) return;
+
+    let columnNumber = e.target.id.split("-")[1];
+    // console.log(game.playerTracker)
+    game.playInColumn(Number.parseInt(columnNumber));
     updateUI();
   });
 });
