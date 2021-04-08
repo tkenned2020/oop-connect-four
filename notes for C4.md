@@ -43,7 +43,7 @@ Example Hard Code:
 
 PUTTING A TOKEN IN A SQUARE
 
-Conditional:Select the square you want to place a token in, create a div, set class to: ("token black" or "token red"), append the created div to the element of that square. *The row/column are zero-based
+Conditional: Select the square you want to place a token in, create a div, set class to: ("token black" or "token red"), append the created div to the element of that square. *The row/column are zero-based
 (0-0, 0-1)*
 
 Code to Run: create a function that will indicate which player is currently playing, create a div adn assign a clase='color-token', append that div to the element of that square which will place a token in that square, and then switch turns
@@ -165,3 +165,35 @@ Code to Run:
 Description:
 
 Example Hard Code:
+
+
+/*
+Understanding:
+
+* Create red & black player variables
+* store the players moves in their array
+Player 1 & 2 disable
+
+list: create code indicate when col. is full
+      indicating which turn for play by utilizing
+      by using click-targets
+
+putting a token in a square
+
+Plan: when col. is full set class to 'full'
+    on specific col.
+    ex. when col.length === 6 set class to 'full'
+
+    add black or red class to the div with the
+    the 'click-targets" id
+
+when placing token in square:
+create div that will indicate what color and
+then make this div the child of that square
+
+Player turns utilize show and hide method
+
+grab cols by class
+let columns = document.querySelectorAll();
+
+*/
