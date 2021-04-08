@@ -115,6 +115,31 @@ Conditional:
 Code to Run:
 
 Description:
+find a way to append the square 
+
+column 0
+0,0 - 5,0 to col 0
+
+column 1
+0,1 - 5,1 to col 1
+
+column 2 
+0,2 - 5,2
+
+col 3
+0,3 - 5,3
+
+each index contains a div id
+const col0 = (00, 01, 02, 03, 04, 05, 06)
+const col1 = (10, 11, 12, 13, 14, 15, 16)
+const col2 = (20, 21, 22, 23, 24, 25, 26)
+const col3 = (30, 31, 32, 33, 34, 35, 36)
+
+getTokenAt()
+
+
+
+
 
 Example Hard Code:
 

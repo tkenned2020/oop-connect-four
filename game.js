@@ -1,8 +1,13 @@
+import Column from "column.js" 
+//if you don't use the default keyword then you do need to destructure {}
+// and variables have to be the same
+// otherwise you can name anything
+
 class Game {
   constructor(name1, name2) {
     this.name1 = name1;
     this.name2 = name2;
-
+    this.columns = [new Column(), new Column(), new Column(), new Column(), new Column(), new Column(),],
     this.playerTracker = 1;
 
     //function playInColumn()

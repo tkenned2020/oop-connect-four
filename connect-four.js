@@ -1,6 +1,9 @@
 // const Player1 = token.red
 // const Player2 = token.black
 
+//create colunns array, 01, 20
+//first chip would be col 0, row 6
+
 import Game from "./game.js";
 
 let game = undefined;
@@ -66,22 +69,22 @@ window.addEventListener("DOMContentLoaded", (e) => {
   });
 });
 
-//let columns = document.querySelectorAll(".click-target"); //get class from css
-//     //should returns a node list
-//     let tokens = document.querySelectorAll(".token-square");
-//     columns.appendChild(tokens);
+let columns = document.querySelectorAll(".click-target"); //get class from css
+    //should returns a node list
+    let tokens = document.querySelectorAll(".token-square");
+    columns.appendChild(tokens);
 
-//     columns.addEventListener("click", (e) => { });
+    columns.addEventListener("click", (e) => { });
 
-//     columns.forEach((column) => {
-//         column = [];
-//         if (column.length === 6) {
-//             column.setAttribute("class", "click-target full");
-//         }
-//     });
+    columns.forEach((column) => {
+        column = [];
+        if (column.length === 6) {
+            column.setAttribute("class", "click-target full");
+        }
+    });
 
-// let blackChip = document.createElement("div");
-// blackChip.setAttribute("class", "token black");
+let blackChip = document.createElement("div");
+blackChip.setAttribute("class", "token black");
 
-// let redChip = document.createElement("div");
-// redChip.setAttribute("class", "token red");
+let redChip = document.createElement("div");
+redChip.setAttribute("class", "token red");
